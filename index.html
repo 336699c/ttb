@@ -151,9 +151,6 @@ tr:nth-child(even) {
 
 <script>
 const dayinmonth = {
-302:2,
-303:3,
-304:4,
 307:5,
 308:6,
 309:7,
@@ -175,7 +172,11 @@ const timetable = [
 ["ENG","M2","ICT / GEOG","Phy-b","MUS","CHEM"],
 ["ENG","ENG","M2","CHEM","CHIN","CHIN"],
 ["Phy-b","M2","CSD","CHIN","CHEM","ICT / GEOG"],
-["ICT / GEOG","M2","CHIN","CSD","CHEM","Phy-b"]
+["ICT / GEOG","M2","CHIN","CSD","CHEM","Phy-b"],
+["1","2","3","4","5","6"],
+["2","2","3","4","5","6"],
+["3","2","3","4","5","6"],
+["4","2","3","4","5","6"]
 ];
 const classlink = {
 "CHIN":"https://meet.google.com/jkh-fdoi-qzp?authuser=1",
@@ -226,8 +227,9 @@ return (e==0)?"不用上學":("Day "+e);
 }
 function tableday(e){
 var i = getDay(0);
-if (e==1)return i
+//if (e==1)return i;
 if (i==0)i=1;
+if (i>8)return i+e-1;
 return (((i+e-1)%8)==0)?8:(i+e-1)%8;
 }
 
@@ -291,5 +293,5 @@ document.getElementById("link9").innerHTML = "";
 }
 }
 
-//v5.2
+//v5.3
 </script>
