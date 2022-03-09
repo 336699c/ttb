@@ -1,0 +1,397 @@
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+
+}
+
+
+
+td:nth-child(1) {
+text-align: center;
+  font-family: monospace;
+  font-size: 18px;
+  text-align: middle;
+  width: 130px;
+}
+
+td , th {
+  border: 1px solid #dddddd;
+  font-size: 17px;
+  text-align: center;
+  padding: 7px;
+  width: 100px;
+}
+
+tr:nth-child(even) {
+
+  background-color: #dddddd;
+}
+</style>
+</head>
+<p style="margin-right:50px; display:inline-block;">網上時間表v6</p>
+<p id="time" style="font-family: monospace; font-size: 18px; display:inline-block;"></p>
+<p style="margin-left:30px; display:inline-block;"></p>
+<p id="day"  style="font-family: monospace; font-size: 20px; display:inline-block; font-weight: bold;"></p>
+<p id="rmk_tc" style="font-family: monospace; font-size: 20px;margin-left:35px;margin-right:55px; display:inline-block;"></p>
+<p id="tmrday"  style="font-family: monospace; font-size: 20px; display:inline-block;"></p>
+<table>
+  <tr>
+    <th></th>
+    <th id="day1"></th>
+    <th id="day2"></th>
+    <th id="day3"></th>
+    <th id="day4"></th>
+    <th id="day5"></th>
+    <th id="day6"></th>
+    <th id="day7"></th>
+    <th id="day8"></th>
+  </tr>
+  <tr>
+    <td id="time1">08:25 - 09:05</td>
+    <td id="les11">1</td>
+    <td id="les21">2</td>
+    <td id="les31">3</td>
+    <td id="les41">4</td>
+    <td id="les51">5</td>
+    <td id="les61">6</td>
+    <td id="les71">7</td>
+    <td id="les81">8</td>
+  </tr>
+  <tr>
+    <td id="time2">09:05 - 09:45</td>
+    <td id="les12"></td>
+    <td id="les22"></td>
+    <td id="les32"></td>
+    <td id="les42"></td>
+    <td id="les52"></td>
+    <td id="les62"></td>
+    <td id="les72"></td>
+    <td id="les82"></td>
+  </tr>
+  <tr>
+    <td id="time3">09:45 - 10:25</td>
+    <td id="les13"></td>
+    <td id="les23"></td>
+    <td id="les33"></td>
+    <td id="les43"></td>
+    <td id="les53"></td>
+    <td id="les63"></td>
+    <td id="les73"></td>
+    <td id="les83"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td id="les19"  style="display: none;">小息</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td id="time4"></td>
+    <td id="les14"></td>
+    <td id="les24"></td>
+    <td id="les34"></td>
+    <td id="les44"></td>
+    <td id="les54"></td>
+    <td id="les64"></td>
+    <td id="les74"></td>
+    <td id="les84"></td>
+  </tr>
+  <tr>
+    <td id="time5">11:25 - 12:05</td>
+    <td id="les15"></td>
+    <td id="les25"></td>
+    <td id="les35"></td>
+    <td id="les45"></td>
+    <td id="les55"></td>
+    <td id="les65"></td>
+    <td id="les75"></td>
+    <td id="les85"></td>
+  </tr>
+  <tr>
+    <td id="time6">12:05 - 12:45</td>
+    <td id="les16"></td>
+    <td id="les26"></td>
+    <td id="les36"></td>
+    <td id="les46"></td>
+    <td id="les56"></td>
+    <td id="les66"></td>
+    <td id="les76"></td>
+    <td id="les86"></td>
+  </tr>
+</table>
+<p id = "linktitle1" style="margin-right:30px; display:inline-block;"></p>
+<p id = "link1" style="display:inline-block;margin-right:30px;"></p>
+<a href="" id="clink3" target="_blank">
+<p id = "link3" style="display:inline-block;" ></p>
+</a>
+<p></p>
+<p id = "linktitle2" style="margin-right:30px;display:inline-block;"></p>
+<p id = "link2" style="display:inline-block;margin-right:30px;"></p>
+<a href="" id="clink4" target="_blank">
+<p id = "link4" style="display:inline-block;" ></p>
+</a>
+<p></p>
+<p id = "link6" style="display:inline-block;margin-right:30px;"></p>
+<a href="" id="clink7" target="_blank">
+<p id = "link7" style="display:inline-block;" ></p>
+</a>
+<p></p>
+<p id = "link8" style="display:inline-block;margin-right:30px;"></p>
+<a href="" id="clink9" target="_blank">
+<p id = "link9" style="display:inline-block;" ></p>
+</a>
+
+<!-- <input type="text" id="fname" name="fname"><br><br> -->
+
+<script>
+const dayinmonth = {
+309:41,
+310:8,
+311:9,
+312:12,
+313:13,
+314:14,
+315:15,
+316:16,
+317:17,
+318:18,
+319:19,
+320:20,
+321:21,
+322:22,
+323:23,
+324:24,
+325:25,
+326:26,
+327:27,
+328:28,
+329:29,
+330:30,
+331:31,
+401:41,
+402:42,
+403:43,
+404:44,
+405:45,
+406:46,
+407:47,
+408:48,
+409:49,
+410:50,
+411:51,
+412:52,
+413:53,
+414:54,
+415:55,
+};
+const rmk = {
+"Last Day Of Normal Online Class":[310],
+"暑假":[309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,418,419,420,421,422],
+}
+const timeuses = {
+"specialtime1":[309]
+}
+
+const specialtime1 = ["","09:00 - 09:45","10:00 - 10:45","11:00 - 11:45","12:00 - 12:45",""];
+const specialtime11 = [505,545,585,625,645,685,725,765,2147483647];
+
+const normaltime = ["08:25 - 09:05","09:05 - 09:45","09:45 - 10:25","10:45 - 11:25","11:25 - 12:05","12:05 - 12:45"];
+const timetillspan = ["les11","les12","les13","les19","les14","les15","les16"];
+var timetill = [505,545,585,625,645,685,725,765,2147483647];
+function _addz(e){return (e<10)?("0"+e):e}
+const timetable = [
+["M2","M2","ENG","ENG","ICT / GEOG","CHIN"],
+["RSC","Phy-b","M2","ICT / GEOG","CHEM","ENG"],
+["M2","ENG","CHIN","CHIN","Phy-b","PE"],
+["M2","ICT / GEOG","Phy-b","CSD","CHEM","GE"],
+["ENG","M2","ICT / GEOG","Phy-b","MUS","CHEM"],
+["ENG","ENG","M2","CHEM","CHIN","CHIN"],
+["Phy-b","M2","CSD","CHIN","CHEM","ICT / GEOG"],
+["ICT / GEOG","M2","CHIN","CSD","CHEM","Phy-b"],
+
+["測試中","暑假補課","3月14日","（星期一）","0900!",""],
+["","","","","",""],
+["","","","","",""],
+["","","","","",""],
+["","","","","",""],
+["","M2","M2","GEOG","GEOG",""],
+["","CHEM","CHEM","","",""],
+["","","","M2","M2",""],
+["","CHEM","CHEM","GEOG","GEOG",""],
+["","M2","M2","","",""],
+["周末","","","","",""],
+["周末","","","","",""],
+["","GEOG","GEOG","CHEM","CHEM",""],
+["","M2","M2","","",""],
+["此日無堂","","","","",""],
+["","","","CHEM","CHEM",""],
+["","M2","M2","GEOG","GEOG",""],
+["周末","","","","",""],
+["周末","","","","",""],
+["","","","M2","M2",""],
+["","GEOG","GEOG","","",""],
+["","","","M2","M2",""],
+["","ENG","ENG","GEOG","GEOG",""],
+["4月1日","此日無堂","","","",""],
+["4月2日","此日無堂","","","",""],
+["","","","","",""],
+["","","","","",""],
+["","","","","",""],
+["","","","","",""],
+["","","","","",""],
+["","","","","",""],
+["","","","","",""],
+
+["4月1日","此日無堂","","","",""],
+["4月2日","周末","","","",""],
+["4月3日","周末","","","",""],
+["4月4日","M2","M2","","",""],
+["4月5日","此日無堂","","","",""],
+["4月6日","GEOG","GEOG","","",""],
+["4月7日","M2","M2","","",""],
+["4月8日","","","ENG","ENG",""],
+["4月9日","周末","","","",""],
+["4月10日","周末","","","",""],
+["4月11日","","","GEOG","GEOG",""],
+["4月12日","M2","M2","","",""],
+["4月13日","CHEM","CHEM","","",""],
+["4月14日","GEOG","GEOG","CHEM","CHEM",""],
+["4月15日","此日無堂","","暑假補課","已結束",""],
+];
+const classlink = {
+"CHIN":"https://meet.google.com/jkh-fdoi-qzp?authuser=1",
+"ENG":"",
+"M2":"https://meet.google.com/kms-yphi-cso?authuser=1&hs=179",
+"Phy-b":"https://meet.google.com/kbv-unke-fna?authuser=1&hs=179",
+"CSD-C":"https://us02web.zoom.us/j/83505714173?pwd=aHo3bE1EYWF3VnZpNTVuWFFJNlhvdz09",
+"MUS":"https://meet.google.com/cxn-yveh-ryc?authuser=1&hs=179",
+"GE":"",
+"RSC":"https://zoom.us/j/7767071717?pwd=bFk5YVVMTDZtMWZIMFFwMWNSbFQ5QT09",
+"PE":"https://meet.google.com/kwy-wmkr-wsv?authuser=1&hs=179",
+"CHEM":"https://us04web.zoom.us/j/72333137046?pwd=8DbTKdbSgBI-XRB6YSxIiX5IeucRrO.1",
+"ICT":"https://meet.google.com/ghw-mntd-gyj?authuser=1&hs=179",
+"ICT / GEOG":"7",
+"GEOG":"https://zoom.us/j/8815647270?pwd=WXExNGlKTVlSMGxlNUhPV2dQaUlwdz09",
+"CSD-E":"",
+"CSD":"https://us02web.zoom.us/j/83505714173?pwd=aHo3bE1EYWF3VnZpNTVuWFFJNlhvdz09",
+"小息":"",
+"Class Affair":""
+}
+
+
+const _0x7f = ["日","一","二","三","四","五","六"];
+
+setInterval(myTimer, 500);
+
+function getTime(){
+return new Date().getHours()*60+new Date().getMinutes()
+}
+function getDay(e){
+var _0x19 = (new Date().getMonth()+1)*100+(new Date().getDate()+e);
+if (_0x19 in dayinmonth){return dayinmonth[_0x19]}else{return 0}
+}
+function getrmk(e){
+var _0x19 = (new Date().getMonth()+1)*100+(new Date().getDate()+e);
+var _0x20 = 0;
+for (_0x20 in rmk)if (rmk[_0x20].includes(_0x19)){return _0x20}
+return "";
+}
+function gettimeseq(){
+var _0x19 = (new Date().getMonth()+1)*100+(new Date().getDate());
+var _0x20 = 0;
+for (_0x20 in timeuses){
+if (timeuses[_0x20].includes(_0x19)){timetill = eval(_0x20+"1");return eval(_0x20)}
+}
+return normaltime
+}
+function eventimer(){
+return ((new Date().getSeconds())%2==0)?":":" ";
+}
+function checktime(){
+for (var i in timetill){
+if (timetill[i]>getTime())return i
+}
+}
+function daytoString(e){
+return (e==0)?"不用上學":("Day "+e);
+}
+function tableday(e){
+var i = getDay(0);
+//if (e==1)return i;
+if (i==0)i=1;
+if (i>8)return i+e-1;
+return (((i+e-1)%8)==0)?8:(i+e-1)%8;
+}
+
+
+
+
+// Refresh 1 times only
+document.getElementById("day").innerHTML = daytoString(getDay(0));
+document.getElementById("rmk_tc").innerHTML = getrmk(0);
+document.getElementById("tmrday").innerHTML = " 明天 "+daytoString(getDay(1));
+for (var _0x18=1; _0x18<9; _0x18++){
+document.getElementById("day"+_0x18).innerHTML = "Day "+tableday(_0x18);
+for (var _0x19=1; _0x19<7; _0x19++){
+document.getElementById("les"+_0x18+_0x19).innerHTML = timetable[tableday(_0x18)-1][_0x19-1];
+}
+}
+
+for (var _0x100=1; _0x100<7;_0x100++){
+document.getElementById("time"+_0x100).innerHTML = gettimeseq()[_0x100-1]
+}
+
+myTimer()
+
+
+// Time! Refresh every second
+function myTimer(){
+var ix = 0;var ixt = [];
+document.getElementById("time").innerHTML = new Date().getFullYear()+'年 '+(new Date().getMonth()+1)+'月 '+new Date().getDate()+'日 （星期'+_0x7f[new Date().getDay()]+'）  '+_addz(new Date().getHours())+eventimer()+_addz(new Date().getMinutes())+eventimer()+_addz(new Date().getSeconds());
+
+if (getDay(0)!=0){
+for (var _0x22 in timetillspan){
+if (getTime()<timetill[parseInt(_0x22)+1]){
+document.getElementById(timetillspan[_0x22]).style.backgroundColor  = "#fff2cc";
+ix++; ixt.push(document.getElementById(timetillspan[_0x22]).innerHTML);
+}else{
+document.getElementById(timetillspan[_0x22]).style.backgroundColor  = (_0x22%2==1)?"#ffffff":"#dddddd"
+}
+}
+document.getElementById("linktitle1").innerHTML = (ix>0)?"現在課堂：":"";
+document.getElementById("linktitle2").innerHTML = (ix>1)?"下一課堂：":"";
+document.getElementById("link1").innerHTML = (ix>0)?(ixt[0]):"";
+document.getElementById("link2").innerHTML = (ix>1)?(ixt[1]):"";
+document.getElementById("link3").innerHTML = (ix>0)?(classlink[ixt[0]]):"";
+document.getElementById("link4").innerHTML = (ix>1)?(classlink[ixt[1]]):"";
+document.getElementById("clink3").href = (ix>0)?(classlink[ixt[0]]):"";
+document.getElementById("clink4").href = (ix>1)?(classlink[ixt[1]]):"";
+
+//hardcoded ICT/GEOG
+if ((document.getElementById("link3").innerHTML=="7") || (document.getElementById("link4").innerHTML=="7")){
+document.getElementById("link6").innerHTML = "ICT: ";
+document.getElementById("clink7").href = classlink["ICT"];
+document.getElementById("link7").innerHTML = classlink["ICT"];
+document.getElementById("link8").innerHTML = "GEOG: ";
+document.getElementById("clink9").href = classlink["GEOG"];
+document.getElementById("link9").innerHTML = classlink["GEOG"];
+}else{
+document.getElementById("link6").innerHTML = "";
+document.getElementById("clink7").href = "";
+document.getElementById("link7").innerHTML = "";
+document.getElementById("link8").innerHTML = "";
+document.getElementById("clink9").href = "";
+document.getElementById("link9").innerHTML = "";
+}
+
+}
+}
+
+//v6.0
+</script>
