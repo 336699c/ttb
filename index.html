@@ -1,10 +1,269 @@
-<h1>336699c/ttb (v7編寫中) 請選擇以下連結</h1>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+
+}
+
+
+
+td:nth-child(1) {
+text-align: center;
+  font-family: monospace;
+  font-size: 18px;
+  text-align: middle;
+  width: 130px;
+}
+
+td , th {
+  border: 1px solid #dddddd;
+  font-size: 17px;
+  text-align: center;
+  padding: 7px;
+  width: 100px;
+}
+
+tr:nth-child(even) {
+
+  background-color: #dddddd;
+}
+</style>
+</head>
+<p style="margin-right:50px; display:inline-block;">網上時間表v7</p>
+<p id="time" style="font-family: monospace; font-size: 18px; display:inline-block;"></p>
+<p style="margin-left:30px; display:inline-block;"></p>
+<p id="day"  style="font-family: monospace; font-size: 20px; display:inline-block; font-weight: bold;"></p>
+<p id="rmk_tc" style="font-family: monospace; font-size: 20px;margin-left:35px;margin-right:55px; display:inline-block;"></p>
+<p id="tmrday"  style="font-family: monospace; font-size: 20px; display:inline-block;"></p>
+<table>
+  <tr>
+    <th></th>
+    <th id="day1"></th>
+    <th id="day2"></th>
+    <th id="day3"></th>
+    <th id="day4"></th>
+    <th id="day5"></th>
+    <th id="day6"></th>
+    <th id="day7"></th>
+    <th id="day8"></th>
+  </tr>
+  <tr>
+    <td id="time1">08:25 - 09:05</td>
+    <td id="les11">1</td>
+    <td id="les21">2</td>
+    <td id="les31">3</td>
+    <td id="les41">4</td>
+    <td id="les51">5</td>
+    <td id="les61">6</td>
+    <td id="les71">7</td>
+    <td id="les81">8</td>
+  </tr>
+  <tr>
+    <td id="time2">09:05 - 09:45</td>
+    <td id="les12"></td>
+    <td id="les22"></td>
+    <td id="les32"></td>
+    <td id="les42"></td>
+    <td id="les52"></td>
+    <td id="les62"></td>
+    <td id="les72"></td>
+    <td id="les82"></td>
+  </tr>
+  <tr>
+    <td id="time3">09:45 - 10:25</td>
+    <td id="les13"></td>
+    <td id="les23"></td>
+    <td id="les33"></td>
+    <td id="les43"></td>
+    <td id="les53"></td>
+    <td id="les63"></td>
+    <td id="les73"></td>
+    <td id="les83"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td id="les19"  style="display: none;">小息</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td id="time4"></td>
+    <td id="les14"></td>
+    <td id="les24"></td>
+    <td id="les34"></td>
+    <td id="les44"></td>
+    <td id="les54"></td>
+    <td id="les64"></td>
+    <td id="les74"></td>
+    <td id="les84"></td>
+  </tr>
+  <tr>
+    <td id="time5">11:25 - 12:05</td>
+    <td id="les15"></td>
+    <td id="les25"></td>
+    <td id="les35"></td>
+    <td id="les45"></td>
+    <td id="les55"></td>
+    <td id="les65"></td>
+    <td id="les75"></td>
+    <td id="les85"></td>
+  </tr>
+  <tr>
+    <td id="time6">12:05 - 12:45</td>
+    <td id="les16"></td>
+    <td id="les26"></td>
+    <td id="les36"></td>
+    <td id="les46"></td>
+    <td id="les56"></td>
+    <td id="les66"></td>
+    <td id="les76"></td>
+    <td id="les86"></td>
+  </tr>
+</table>
+<p id = "linktitle1" style="margin-right:30px; display:inline-block;"></p>
+<p id = "link1" style="display:inline-block;margin-right:30px;"></p>
+<a href="" id="clink3" target="_blank">
+<p id = "link3" style="display:inline-block;" ></p>
+</a>
+<p></p>
+<p id = "linktitle2" style="margin-right:30px;display:inline-block;"></p>
+<p id = "link2" style="display:inline-block;margin-right:30px;"></p>
+<a href="" id="clink4" target="_blank">
+<p id = "link4" style="display:inline-block;" ></p>
+</a>
+<p></p>
+<p id = "link6" style="display:inline-block;margin-right:30px;"></p>
+<a href="" id="clink7" target="_blank">
+<p id = "link7" style="display:inline-block;" ></p>
+</a>
+<p></p>
+<p id = "link8" style="display:inline-block;margin-right:30px;"></p>
+<a href="" id="clink9" target="_blank">
+<p id = "link9" style="display:inline-block;" ></p>
+</a>
+
 <a href="https://336699c.github.io/ttb/content.html">
-<p>目錄</p>
+<p>前往舊版網站</p>
 </a>
-<a href="https://336699c.github.io/ttb/v6.html">
-<p>v6</p>
-</a>
-<a href="https://336699c.github.io/ttb/v5.html">
-<p>v5</p>
-</a>
+<!-- <input type="text" id="fname" name="fname"><br><br> -->
+
+<script>
+const dayinmonth = {
+502:5,
+503:6,
+504:7,
+505:8,
+506:1
+};
+const rmk = {
+
+}
+const timeuses = {
+
+}
+
+const specialtime1 = ["","09:00 - 09:45","10:00 - 10:45","11:00 - 11:45","12:00 - 12:45",""];
+const specialtime11 = [505,540,585,645,659,705,765,766,2147483647];
+
+const normaltime = ["08:25 - 09:05","09:05 - 09:45","09:45 - 10:25","10:45 - 11:25","11:25 - 12:05","12:05 - 12:45"];
+const timetillspan = ["les11","les12","les13","les19","les14","les15","les16"];
+var timetill = [505,545,585,625,645,685,725,765,2147483647];
+function _addz(e){return (e<10)?("0"+e):e}
+const timetable = [
+["M2","M2","ENG","ENG","ICT / GEOG","CHIN"],
+["RSC","Phy-b","M2","ICT / GEOG","CHEM","ENG"],
+["M2","ENG","CHIN","CHIN","Phy-b","PE"],
+["M2","ICT / GEOG","Phy-b","CSD","CHEM","GE"],
+["ENG","M2","ICT / GEOG","Phy-b","MUS","CHEM"],
+["ENG","ENG","M2","CHEM","CHIN","CHIN"],
+["Phy-b","M2","CSD","CHIN","CHEM","ICT / GEOG"],
+["ICT / GEOG","M2","CHIN","CSD","CHEM","Phy-b"]
+];
+
+
+
+const _0x7f = ["日","一","二","三","四","五","六"];
+
+setInterval(myTimer, 500);
+
+function getTime(){
+return new Date().getHours()*60+new Date().getMinutes()
+}
+function getDay(e){
+var _0x19 = (new Date().getMonth()+1)*100+(new Date().getDate()+e);
+if (_0x19 in dayinmonth){return dayinmonth[_0x19]}else{return 0}
+}
+function getrmk(e){
+var _0x19 = (new Date().getMonth()+1)*100+(new Date().getDate()+e);
+var _0x20 = 0;
+for (_0x20 in rmk)if (rmk[_0x20].includes(_0x19)){return _0x20}
+return "";
+}
+function gettimeseq(){
+var _0x19 = (new Date().getMonth()+1)*100+(new Date().getDate());
+var _0x20 = 0;
+for (_0x20 in timeuses){
+if (timeuses[_0x20].includes(_0x19)){timetill = eval(_0x20+"1");return eval(_0x20)}
+}
+return normaltime
+}
+function eventimer(){
+return ((new Date().getSeconds())%2==0)?":":" ";
+}
+function checktime(){
+for (var i in timetill){
+if (timetill[i]>getTime())return i
+}
+}
+function daytoString(e){
+return (e==0)?"不用上學":("Day "+e);
+}
+function tableday(e){
+var i = getDay(0);
+//if (e==1)return i;
+if (i==0)i=1;
+if (i>8)return i+e-1;
+return (((i+e-1)%8)==0)?8:(i+e-1)%8;
+}
+
+
+
+
+// Refresh 1 times only
+document.getElementById("day").innerHTML = daytoString(getDay(0));
+document.getElementById("rmk_tc").innerHTML = getrmk(0);
+document.getElementById("tmrday").innerHTML = " 明天 "+daytoString(getDay(1));
+for (var _0x18=1; _0x18<9; _0x18++){
+document.getElementById("day"+_0x18).innerHTML = "Day "+tableday(_0x18);
+for (var _0x19=1; _0x19<7; _0x19++){
+document.getElementById("les"+_0x18+_0x19).innerHTML = timetable[tableday(_0x18)-1][_0x19-1];
+}
+}
+
+
+for (var _0x100=1; _0x100<7;_0x100++){
+document.getElementById("time"+_0x100).innerHTML = gettimeseq()[_0x100-1]
+}
+
+if (getDay(0)!=0){
+timetillspan.forEach(_0x22=>
+document.getElementById(_0x22).style.backgroundColor  = "#fff2cc"
+)}
+myTimer()
+
+
+// Time! Refresh every second
+function myTimer(){
+var ix = 0;var ixt = [];
+document.getElementById("time").innerHTML = new Date().getFullYear()+'年 '+(new Date().getMonth()+1)+'月 '+new Date().getDate()+'日 （星期'+_0x7f[new Date().getDay()]+'）  '+_addz(new Date().getHours())+eventimer()+_addz(new Date().getMinutes())+eventimer()+_addz(new Date().getSeconds());
+
+
+}
+
+//v6.0
+</script>
